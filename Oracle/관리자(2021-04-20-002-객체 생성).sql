@@ -12,7 +12,7 @@ CASCADE CONSTRAINTS;
 -- TABLESPACE 생성
 -- 이름 : schollDB, dataFile : school.dbf, SIZE : 1M, Ex :1K
 CREATE TABLESPACE schoolDB
-DATAFILE 'C:/oraclexe/data/school-1.dbf' -- 오류로 파일이름을 바꾸어 생성
+DATAFILE 'C:/oraclexe/data/school-1.dbf' -- 오류로 파일이름을 바꾸어 생성 (원래는 school.dbf 로 끝남!)
 SIZE 1M AUTOEXTEND ON NEXT 1K;
 
 -- 사용자 생성

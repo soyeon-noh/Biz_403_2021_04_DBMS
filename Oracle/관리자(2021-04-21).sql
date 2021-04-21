@@ -1,0 +1,19 @@
+-- TableSpace 생성
+CREATE TABLESPACE iolistDB
+DATAFILE 'C:/oraclexe/data/iolist.dbf'
+SIZE 1M AUTOEXTEND ON NEXT 1K;
+
+-- User 생성
+CREATE USER iouser IDENTIFIED BY iouser
+DEFAULT TABLESPACE iolistDB;
+
+-- User 에게 DBA 권한부여
+GRANT DBA TO iouser;
+
+-- User 삭제
+DROP USER iouser CASCADE;
+
+-- TableSpace 삭제
+DROP TABLESPACE iolistDB
+INCLUDING CONTENTS AND DATAFILES
+CASCADE CONSTRAINTS;
