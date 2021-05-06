@@ -41,7 +41,7 @@ REFERENCES tbl_author(au_code);
 -- 데이터를 author에서 삭제하려고 하면
 -- 오류가 발생하고 데이터가 삭제되지 않는다.
 DELETE FROM tbl_author
-WHERE au_code = 'A0003';
+WHERE au_code = 'A0001';
 
 
 -- A0001, A0002 을 삭제한 상태에서 A0001 도서정보 추가

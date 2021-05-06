@@ -10,6 +10,8 @@ CREATE TABLE tbl_books(
 );
 
 DROP TABLE tbl_books;
+DROP TABLE tbl_author;
+DROP TABLE tbl_company;
 
 CREATE TABLE tbl_company(
     cp_code	CHAR(5)		PRIMARY KEY,

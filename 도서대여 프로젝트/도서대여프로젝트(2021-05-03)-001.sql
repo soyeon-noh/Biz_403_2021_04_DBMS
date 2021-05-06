@@ -107,14 +107,19 @@ SELECT MAX(br_seq) FROM tbl_book_rent;
 
 -- SEQ의 START 값을 적용하는 테이블의 SEQ 최대값보다 크게
 -- 설정을 하자 (다시만들땐 START 값 주의!!!)
-CREATE SEQUENCE se_book_rent
-START WITH 11
+CREATE SEQUENCE seq_book_rent
+START WITH 12
 INCREMENT BY 1;
 
 INSERT INTO tbl_book_rent(br_seq,
         br_sdate, br_isbn, br_bcode)
 VALUES(seq_book_rent.NEXTVAL,
         '2021-04-20', '9791162540527', 'B0020');
+        
+INSERT INTO tbl_book_rent(br_seq,
+        br_sdate, br_isbn, br_bcode)
+VALUES(seq_book_rent.NEXTVAL,
+        '2021-04-28', '9791188850365', 'B0023');        
         
 SELECT * FROM tbl_book_rent;
 
