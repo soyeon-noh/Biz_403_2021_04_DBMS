@@ -103,3 +103,4 @@ FOREIGN KEY(bk_acode)
 REFERENCES tbl_author(au_code)
 ON DELETE CASCADE;
 
+commit;
