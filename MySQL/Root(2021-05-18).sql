@@ -35,7 +35,7 @@ GRANT all privileges on *.* TO gbUser@localhost;
 
 -- 192.168.0.* ALTER
 -- 현재 공유기에 공통으로 연결된 PC에서
--- MySQL Server에 접근하ㅏㄹ
+-- MySQL Server에 접근하라
 CREATE USER 
 gbUser@'192.168.0.%';
 

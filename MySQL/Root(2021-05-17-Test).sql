@@ -38,7 +38,7 @@ SELECT * FROM tbl_test;
 
 -- MySQL은 Linux 철학을 유지하고 있다.
 
-CREATE TABLe tbl_books(
+CREATE TABLE tbl_books(
 bk_isbn   CHAR(13)      PRIMARY KEY,
 bk_comp   VARCHAR(15)   NOT NULL,
 bk_title   VARCHAR(125)   NOT NULL,
