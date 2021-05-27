@@ -11,3 +11,7 @@ CREATE TABLE tbl_todolist (
     td_edate VARCHAR(10) DEFAULT '', -- 완료 날짜, 디폴트값 NULL이 아닌 ''으로 지정
     td_etime VARCHAR(10) DEFAULT '' -- 완료 시간
 );
+
+DESC tbl_todolist;
+
+SELECT * FROM tbl_todolist;
