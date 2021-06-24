@@ -33,11 +33,22 @@ CREATE  TABLE tbl_score (
 );
 
 INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
-VALUE('2021001', 'S001', 90);
+VALUE('20210001', 'S001', 90);
 INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
-VALUE('2021001', 'S002', 80);
+VALUE('20210001', 'S002', 80);
 INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
-VALUE('2021001', 'S003', 70);
+VALUE('20210001', 'S003', 70);
+INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
+VALUE('20210001', 'S004', 60);
+
+INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
+VALUE('20210002', 'S001', 96);
+INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
+VALUE('20210002', 'S002', 69);
+INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
+VALUE('20210002', 'S003', 83);
+INSERT INTO tbl_score (sc_stnum, sc_sbcode, sc_score)
+VALUE('20210002', 'S004', 77);
 
 SELECT * FROM tbl_score;
 DROP TABLE tbl_score;
@@ -49,16 +60,28 @@ CREATE TABLe tbl_subject (
 );
 
 INSERT INTO tbl_subject (sb_code, sb_name, sb_prof)
-VALUE('0001', '국어', '김덕배');
+VALUE('S001', '국어', '김덕배');
 INSERT INTO tbl_subject (sb_code, sb_name, sb_prof)
-VALUE('0002', '영어', '정혜은');
+VALUE('S002', '영어', '정혜은');
 INSERT INTO tbl_subject (sb_code, sb_name, sb_prof)
-VALUE('0003', '수학', '유민하');
+VALUE('S003', '수학', '유민하');
 INSERT INTO tbl_subject (sb_code, sb_name, sb_prof)
-VALUE('0004', '음악', '형진우');
+VALUE('S004', '음악', '형진우');
 INSERT INTO tbl_subject (sb_code, sb_name, sb_prof)
-VALUE('0005', '과학', '류성현');
+VALUE('S005', '과학', '류성현');
 
+
+SELECT * FROM tbl_student;
 SELECT * FROM tbl_subject;
+SELECT * FROM tbl_score;
+
+-- DELETE FROM tbl_student;
+-- DELETE FROM tbl_score;
+-- DELETE FROM tbl_subject;
+-- DELETE FROM tbl_subject WHERE sb_code = '과목코드';
+
+
+
+
 
 
