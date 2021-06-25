@@ -54,7 +54,7 @@ SELECT * FROM tbl_score;
 DROP TABLE tbl_score;
 
 CREATE TABLe tbl_subject (
-	sb_code	CHAR(4),
+	sb_code	CHAR(4) PRIMARY KEY,
 	sb_name	VARCHAR(20)	NOT NULL,
 	sb_prof	VARCHAR(20)
 );
