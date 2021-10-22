@@ -54,6 +54,61 @@ WHERE userid = 'B002';
 show tables;
 DESC tbl_sales;
 DESC hibernate_sequence;
-
 SELECT * FROM tbl_buyer;
 
+-- 2021-10-22
+
+SELECT * FROM tbl_buyer;
+SELECT * FROM tbl_sales;
+
+-- 고객별로 몇번씩 거래했는가
+SELECT userid, COUNT(userid) FROM tbl_sales
+GROUP BY userid;
+
+-- 고객별로 얼만큼씩 구입했는가
+SELECT userid, SUM(total) FROM tbl_sales
+GROUP BY userid;
+
+-- 각 상품별로 몇번씩 구매되엇나
+SELECT pname, count(pname) FROM tbl_sales
+GROUP BY pname;
+
+-- 각 상품별로 몇개씩 판매되었나
+SELECT pname, sum(qty) FROM tbl_sales
+GROUP BY pname
+ORDER BY count(pname) DESC;
+
+-- 상품별로 총 판매금액이 얼마인가
+SELECT pname, sum(total) FROM tbl_sales
+GROUP BY pname;
+
+-- 고객별로 어떤상품을 몇회 구입했나
+SELECT userid, pname, COUNT(*) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, pname;
+
+-- 고객별로 어떤상품을 몇개씩 구입했냐
+SELECT userid, pname, SUM(qty) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, pname;
+
+-- 어떤고객이 어떤 상품을 몇개씩 구매했냐
+-- 많이 구매한 순으로 보여라
+SELECT userid, pname, SUM(qty) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, SUM(qty) DESC;
+
+-- 어떤고객이 어떤 상품을 얼마씩 구매했냐
+-- 금액이 큰 순으로 보여라
+SELECT userid, pname, SUM(total) FROM tbl_sales
+GROUP BY userid, pname
+ORDER BY userid, SUM(total) DESC;
+
+
+-- userid는 두 table에서 겹치기 때문에 명시해주어야함
+SELECT S.userid, B.name, pname, SUM(total) 
+FROM tbl_sales S
+LEFT JOIN tbl_buyer B
+	ON S.userid = B.userid
+GROUP BY S.userid, B.name, pname
+ORDER BY S.userid, SUM(total) DESC;
